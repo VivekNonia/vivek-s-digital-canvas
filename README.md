@@ -4,70 +4,162 @@
 
 **URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-## How can I edit this code?
+# Vivek's Digital Canvas
 
-There are several ways of editing your application.
+A modern, responsive portfolio and resume website showcasing professional work, skills, and experience. Built with cutting-edge web technologies to deliver a smooth, engaging user experience.
 
-**Use Lovable**
+## Overview
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+**Vivek's Digital Canvas** is a full-stack portfolio application designed to present professional credentials, design work, technical expertise, and project experience in an elegant and interactive manner. The site features smooth animations, responsive design, and an intuitive navigation system.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Features
 
-**Use your preferred IDE**
+- **Responsive Design** - Mobile-first approach that works seamlessly across all devices
+- **Smooth Animations** - Minimal, elegant background animations with gradient shifts and floating elements
+- **Modern UI** - Built with shadcn-ui components for a professional appearance
+- **Dark Theme** - Eye-friendly dark mode design optimized for readability
+- **Sections Included**:
+	- Hero section with introduction
+	- About me
+	- Skills & expertise
+	- Professional experience
+	- Featured projects
+	- Design portfolio
+	- Contact information
+	- Resume download
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠 Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Frontend Framework**: React 18+
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn-ui
+- **Routing**: React Router
+- **State Management**: TanStack React Query
+- **Notifications**: Sonner & React Hot Toast
+- **Testing**: Vitest
 
-Follow these steps:
+## 📦 Installation
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or bun package manager
+
+### Setup
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/VivekNonia/vivek-s-digital-canvas.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd vivek-s-digital-canvas
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
+# or if using bun
+bun install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
+# or with bun
+bun run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎯 Available Scripts
 
-**Use GitHub Codespaces**
+```sh
+# Development server with hot reload
+npm run dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Build for production
+npm run build
 
-## What technologies are used for this project?
+# Preview production build
+npm run preview
 
-This project is built with:
+# Run tests
+npm run test
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Run tests in watch mode
+npm run test:watch
 
-## How can I deploy this project?
+# Lint code
+npm run lint
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 📁 Project Structure
 
-## Can I connect a custom domain to my Lovable project?
+```
+src/
+├── components/
+│   ├── ui/              # shadcn-ui components
+│   ├── Hero.tsx         # Hero section
+│   ├── About.tsx        # About section
+│   ├── Skills.tsx       # Skills showcase
+│   ├── Experience.tsx   # Work experience
+│   ├── Projects.tsx     # Featured projects
+│   ├── Contact.tsx      # Contact section
+│   └── ...
+├── pages/
+│   ├── Index.tsx        # Home page
+│   ├── Designs.tsx      # Design portfolio
+│   └── NotFound.tsx     # 404 page
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions
+├── styles/              # Global styles and animations
+└── main.tsx             # Application entry point
+```
 
-Yes, you can!
+## 🎨 Customization
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Update Personal Information
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Edit the component files to add your:
+- Name and headline
+- Bio and about text
+- Skills and expertise
+- Experience entries
+- Project details
+- Contact information
+
+### Styling
+
+- **Colors**: Customize Tailwind colors in `tailwind.config.ts`
+- **Fonts**: Modify font imports in `src/index.css`
+- **Animations**: Adjust animation timings in `src/index.css`
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Vercel will automatically build and deploy on every push
+
+### Deploy to Netlify
+
+1. Build the project: `npm run build`
+2. Connect your GitHub repository to [Netlify](https://netlify.com)
+3. Set build command to `npm run build` and publish directory to `dist`
+
+### Deploy to GitHub Pages
+
+```sh
+npm run build
+# Deploy the dist folder to GitHub Pages
+```
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 📧 Contact
+
+For inquiries or collaboration opportunities, please reach out through the contact section on the website or visit [GitHub Profile](https://github.com/VivekNonia).
+
+---
+
+**Last Updated**: January 2026
