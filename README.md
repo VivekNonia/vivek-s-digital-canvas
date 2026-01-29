@@ -1,9 +1,3 @@
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
-
 # Vivek's Digital Canvas
 
 A modern, responsive portfolio and resume website showcasing professional work, skills, and experience. Built with cutting-edge web technologies to deliver a smooth, engaging user experience.
@@ -130,31 +124,6 @@ Edit the component files to add your:
 - **Colors**: Customize Tailwind colors in `tailwind.config.ts`
 - **Fonts**: Modify font imports in `src/index.css`
 - **Animations**: Adjust animation timings in `src/index.css`
-
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com)
-3. Vercel will automatically build and deploy on every push
-
-### Deploy to Netlify
-
-1. Build the project: `npm run build`
-2. Connect your GitHub repository to [Netlify](https://netlify.com)
-3. Set build command to `npm run build` and publish directory to `dist`
-
-### Deploy to GitHub Pages
-
-```sh
-npm run build
-# Deploy the dist folder to GitHub Pages
-```
-
-## 📄 License
-
-This project is open source and available under the MIT License.
 
 ## 📧 Contact
 
