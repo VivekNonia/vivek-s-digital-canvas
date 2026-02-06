@@ -103,10 +103,13 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
   }
 
   .card-glow {
     box-shadow: var(--glow-soft);
+    transition: all 0.3s ease;
   }
 
   .card-glow:hover {
@@ -115,6 +118,12 @@
 
   .glass-card {
     @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    @apply border-border/80;
+    backdrop-filter: blur(20px);
   }
 
   .skill-tag {
@@ -124,11 +133,24 @@
   }
 
   .nav-link {
-    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium;
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   .nav-link.active {
     @apply text-primary;
+  }
+
+  .nav-link.active::after {
+    @apply w-full;
   }
 }
 
@@ -320,6 +342,39 @@
   75% {
     transform: translateX(20px) translateY(-10px);
   }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
 }
 
 @keyframes aurora {

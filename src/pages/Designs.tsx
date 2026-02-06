@@ -1,5 +1,5 @@
 import { ArrowUpRight, Palette, Sparkles, Layout, PenTool, Image as ImageIcon, X, ChevronLeft, ChevronRight, Download } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Footer from "@/components/Footer";
 
@@ -46,7 +46,7 @@ const designWorks: DesignWork[] = [
     gradient: "from-pink-500/25 to-cyan-400/20",
     cover: "/designs/poster-y2k.jpg",
     gallery: [
-      { src: "/designs/poster-y2k.jpg", caption: "Y2K social poster — neon palette, retro pixel accents" },
+      { src: "/designs/poster-y2k.jpg", caption: "Y2K social poster - neon palette, retro pixel accents" },
       { src: "/designs/poster-y2k-1.jpg", caption: "Y2K neon portrait with glow effects" },
       { src: "/designs/poster-y2k-2.jpg", caption: "Y2K Devnagari typography poster" },
       { src: "/designs/poster-y2k-3.jpg", caption: "Y2K fashion editorial with annotations" },
@@ -61,11 +61,11 @@ const designWorks: DesignWork[] = [
     gradient: "from-amber-500/30 to-orange-400/20",
     cover: "/designs/poster-inak-ochre-collection.jpg",
     gallery: [
-      { src: "/designs/poster-kolkata.jpg", caption: "Kolkata — the cultural heritage" },
-      { src: "/designs/poster-delhi.jpg", caption: "Delhi — The Capital City" },
-      { src: "/designs/poster-karnataka.jpg", caption: "Karnataka — The Heritage State" },
-      { src: "/designs/poster-mumbai.jpg", caption: "Mumbai — The Dream City" },
-      { src: "/designs/poster-jaipur.jpg", caption: "Jaipur — The Pink City" },
+      { src: "/designs/poster-kolkata.jpg", caption: "Kolkata - the cultural heritage" },
+      { src: "/designs/poster-delhi.jpg", caption: "Delhi - The Capital City" },
+      { src: "/designs/poster-karnataka.jpg", caption: "Karnataka - The Heritage State" },
+      { src: "/designs/poster-mumbai.jpg", caption: "Mumbai - The Dream City" },
+      { src: "/designs/poster-jaipur.jpg", caption: "Jaipur - The Pink City" },
     ],
     slug: "poster-kolkata",
   },
@@ -77,20 +77,20 @@ const designWorks: DesignWork[] = [
     gradient: "from-red-600/30 to-orange-500/25",
     cover: "/designs/pizza-menu-2.jpg",
     gallery: [
-      { src: "/designs/pizza-menu-1.jpg", caption: "Pizza menu poster — Super Delicious MENU with detailed product showcase" },
-      { src: "/designs/pizza-menu-2.jpg", caption: "Pizza menu poster — PIZZA variant with premium presentation" },
+      { src: "/designs/pizza-menu-1.jpg", caption: "Pizza menu poster - Super Delicious MENU with detailed product showcase" },
+      { src: "/designs/pizza-menu-2.jpg", caption: "Pizza menu poster - PIZZA variant with premium presentation" },
     ],
     slug: "poster-pizza",
   },
   {
-    title: "We Only Rise — Kinetic Typography",
+    title: "We Only Rise - Kinetic Typography",
     subtitle: "Dynamic layered typography with gradient overlays and motion blur",
     description: "A motivational kinetic typography poster featuring bold 3D text effects, layered depth, and vibrant gradient overlays. Designed with motion principles to convey energy and forward momentum through typographic composition.",
     tags: ["Poster", "Typography", "Kinetic", "Print"],
     gradient: "from-purple-600/25 to-pink-500/20",
     cover: "/designs/poster-rise.jpg",
     gallery: [
-      { src: "/designs/poster-rise.jpg", caption: "Kinetic typography poster — layered 3D text with gradient effects and motion" },
+      { src: "/designs/poster-rise.jpg", caption: "Kinetic typography poster - layered 3D text with gradient effects and motion" },
     ],
     slug: "poster-rise",
   },
@@ -105,11 +105,13 @@ const Designs = () => {
     setActive({ work, index });
     setSearchParams({ work: work.slug, i: String(index) });
   };
-  const closeWork = () => {
+  
+  const closeWork = useCallback(() => {
     setActive(null);
     setSearchParams({});
-  };
-  const nextImage = () => {
+  }, [setSearchParams]);
+  
+  const nextImage = useCallback(() => {
     if (!active?.work.gallery) return;
     setActive((prev) => {
       const work = prev!.work;
@@ -117,8 +119,9 @@ const Designs = () => {
       setSearchParams({ work: work.slug, i: String(nextIdx) });
       return { work, index: nextIdx };
     });
-  };
-  const prevImage = () => {
+  }, [active?.work.gallery, setSearchParams]);
+  
+  const prevImage = useCallback(() => {
     if (!active?.work.gallery) return;
     setActive((prev) => {
       const work = prev!.work;
@@ -127,7 +130,7 @@ const Designs = () => {
       setSearchParams({ work: work.slug, i: String(nextIdx) });
       return { work, index: nextIdx };
     });
-  };
+  }, [active?.work.gallery, setSearchParams]);
 
   // Keyboard shortcuts for modal navigation
   useEffect(() => {
@@ -139,7 +142,7 @@ const Designs = () => {
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [active]);
+  }, [active, closeWork, nextImage, prevImage]);
 
   // Open from deep link: ?work=slug&i=index
   useEffect(() => {
@@ -183,7 +186,7 @@ const Designs = () => {
               Designs that <span className="text-gradient bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">Drive Results</span>
             </h1>
             <p className="text-muted-foreground text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium">
-              Strategic design solutions that blend creativity with business impact — from brand identity systems to UI/UX design for enterprise applications.
+              Strategic design solutions that blend creativity with business impact - from brand identity systems to UI/UX design for enterprise applications.
             </p>
             
             {/* Professional Stats */}
@@ -362,7 +365,7 @@ const Designs = () => {
               }}
             />
             <div className="mt-3 text-center text-xs text-muted-foreground">
-              {active.work.title} — {active.index + 1}/{active.work.gallery?.length || 1}
+              {active.work.title} - {active.index + 1}/{active.work.gallery?.length || 1}
               {active.work.gallery?.[active.index]?.caption ? (
                 <div className="mt-1 text-[11px] text-foreground/70">{active.work.gallery?.[active.index]?.caption}</div>
               ) : null}

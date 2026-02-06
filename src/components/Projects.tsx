@@ -118,9 +118,12 @@ const Projects = () => {
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1.5 text-xs font-medium bg-secondary text-muted-foreground rounded-lg border border-border/50 hover:border-primary/30 hover:text-foreground transition-colors"
+                        className="group/tech px-3 py-1.5 text-xs font-medium bg-gradient-to-r from-secondary to-secondary/80 text-foreground rounded-lg border border-border/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 hover:scale-105 transition-all duration-300 cursor-pointer"
                       >
-                        {tech}
+                        <span className="relative">
+                          {tech}
+                          <span className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover/tech:opacity-100 transition-opacity blur-sm" />
+                        </span>
                       </span>
                     ))}
                   </div>

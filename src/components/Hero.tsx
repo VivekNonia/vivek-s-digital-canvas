@@ -9,12 +9,16 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
       {/* Enhanced Background glow effects with animation and parallax */}
       <div 
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-pulse animate-float" 
+        className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-primary/20 via-purple-500/15 to-cyan-500/15 rounded-full blur-3xl animate-pulse animate-float" 
         style={{ transform: `translateY(${parallaxOffset1}px)` }}
       />
       <div 
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-float" 
+        className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-l from-pink-500/15 via-primary/10 to-blue-500/10 rounded-full blur-3xl animate-float" 
         style={{ animationDelay: '2s', transform: `translateY(${parallaxOffset2}px)` }} 
+      />
+      <div 
+        className="absolute top-1/3 right-1/3 w-[300px] h-[300px] bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-full blur-3xl animate-float"
+        style={{ animationDelay: '1s', transform: `translateY(${parallaxOffset3}px)` }}
       />
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-primary/5 via-transparent to-transparent" 
@@ -48,42 +52,53 @@ const Hero = () => {
         <div className="opacity-0 animate-fade-up delay-400 flex flex-col sm:flex-row gap-5 justify-center items-center mb-16">
           <a
             href="#projects"
-            className="px-10 py-4 bg-primary text-primary-foreground rounded-xl font-semibold text-lg
-                       hover:bg-primary/90 transition-all duration-300 animate-glow-pulse hover:scale-105 shadow-xl shadow-primary/30"
+            className="group relative px-10 py-4 bg-gradient-to-r from-primary via-blue-600 to-primary text-primary-foreground rounded-xl font-semibold text-lg
+                       hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105 overflow-hidden"
           >
-            View My Work
+            <span className="relative z-10 flex items-center gap-2">
+              View My Work
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
           </a>
           <a
             href="#contact"
-            className="px-10 py-4 border-2 border-border text-foreground rounded-xl font-semibold text-lg
-                       hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 hover:scale-105"
+            className="group px-10 py-4 border-2 border-primary/40 text-foreground rounded-xl font-semibold text-lg backdrop-blur-sm
+                       hover:border-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-primary/5 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105"
           >
-            Contact Me
+            <span className="flex items-center gap-2">
+              Contact Me
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </span>
           </a>
         </div>
         
-        <div className="opacity-0 animate-fade-up delay-500 flex gap-8 justify-center">
+        <div className="opacity-0 animate-fade-up delay-500 flex gap-6 justify-center">
           <a
             href="https://github.com/VivekNonia"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-110"
+            className="group p-3 rounded-xl border-2 border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
           >
-            <Github size={26} />
+            <Github size={24} className="group-hover:rotate-12 transition-transform duration-300" />
           </a>
           <a
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-110"
+            className="group p-3 rounded-xl border-2 border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
           >
-            <Linkedin size={26} />
+            <Linkedin size={24} className="group-hover:rotate-12 transition-transform duration-300" />
           </a>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=iot23.viveknonia.33@gmail.com&su=Project%20Inquiry&body=Hi%20Vivek,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0D%0A%0D%0A"
-            className="text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-110"
+            className="group p-3 rounded-xl border-2 border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
           >
-            <Mail size={26} />
+            <Mail size={24} className="group-hover:rotate-12 transition-transform duration-300" />
           </a>
         </div>
       </div>

@@ -95,14 +95,14 @@ const Contact = () => {
           </div>
           
           {/* Enhanced CTA Card */}
-          <div className={`glass-card p-10 md:p-16 text-center relative overflow-hidden group border-2 hover:border-primary/50 rounded-3xl glow-effect scroll-reveal ${isVisible ? 'revealed delay-600' : ''}`}>
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(var(--primary-rgb),0.15),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+          <div className={`glass-card p-10 md:p-16 text-center relative overflow-hidden group border-2 hover:border-primary/60 rounded-3xl glow-effect scroll-reveal ${isVisible ? 'revealed delay-600' : ''}`}>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(var(--primary-rgb),0.2),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
             
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-3xl bg-gradient-to-br from-primary/30 to-primary/10 group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-primary/20">
-                <Mail className="text-primary" size={36} />
+              <div className="inline-flex items-center justify-center w-20 h-20 mb-8 rounded-3xl bg-gradient-to-br from-primary/40 to-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-2xl shadow-primary/30 border border-primary/30">
+                <Mail className="text-primary group-hover:scale-110 transition-transform" size={36} />
               </div>
               
               <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -114,11 +114,14 @@ const Contact = () => {
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=iot23.viveknonia.33@gmail.com&su=Project%20Inquiry&body=Hi%20Vivek,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you.%0D%0A%0D%0A"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-primary-foreground rounded-xl font-bold text-lg hover:bg-primary/90 hover:scale-105 transition-all duration-300 group/btn shadow-2xl shadow-primary/40 hover:shadow-primary/60"
+                  className="group/btn relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-primary via-blue-600 to-primary text-primary-foreground rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/50 hover:scale-105 transition-all duration-300 overflow-hidden"
                 >
-                  <Mail size={22} className="group-hover/btn:rotate-12 transition-transform" />
-                  Send a Message
-                  <ArrowUpRight size={20} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  <span className="relative z-10 flex items-center gap-3">
+                    <Mail size={22} className="group-hover/btn:rotate-12 transition-transform" />
+                    Send a Message
+                    <ArrowUpRight size={20} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
                 </a>
               </div>
               
@@ -131,12 +134,12 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center 
-                               hover:bg-primary/10 hover:border-primary/50 border border-border/50 
-                               transition-all duration-300 group/social hover:scale-110 shadow-lg hover:shadow-primary/20"
+                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-secondary/70 flex items-center justify-center 
+                               hover:bg-gradient-to-br hover:from-primary/20 hover:to-primary/10 hover:border-primary/60 border-2 border-border/50 
+                               transition-all duration-300 group/social hover:scale-110 hover:shadow-lg hover:shadow-primary/30 hover:rotate-6"
                     aria-label={social.label}
                   >
-                    <social.icon className="text-muted-foreground group-hover/social:text-primary transition-colors" size={20} />
+                    <social.icon className="text-muted-foreground group-hover/social:text-primary group-hover/social:scale-110 transition-all" size={20} />
                   </a>
                 ))}
               </div>
